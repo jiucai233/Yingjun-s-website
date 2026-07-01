@@ -1,0 +1,75 @@
+/*******************************************************************************
+ * Site theme color override.
+ * Values mirror al_folio_core's default _themes.scss token set; only the
+ * accent tokens (--global-theme-color / --global-hover-color and the
+ * color-derived --global-code-bg-color) are changed to the site's purple.
+ ******************************************************************************/
+
+:root {
+  color-scheme: light;
+  --global-bg-color: #ffffff;
+  --global-code-bg-color: rgba(51, 0, 102, 0.05);
+  --global-text-color: #000000;
+  --global-text-color-light: #828282;
+  --global-theme-color: #330066;
+  --global-hover-color: #330066;
+  --global-hover-text-color: #ffffff;
+  --global-footer-bg-color: #1c1c1d;
+  --global-footer-text-color: #e8e8e8;
+  --global-footer-link-color: #ffffff;
+  --global-distill-app-color: #828282;
+  --global-divider-color: rgba(0, 0, 0, 0.1);
+  --global-card-bg-color: #ffffff;
+  --global-highlight-color: #b71c1c;
+  --global-back-to-top-bg-color: rgba(0, 0, 0, 0.4);
+  --global-back-to-top-text-color: #ffffff;
+  --global-newsletter-bg-color: #ffffff;
+  --global-newsletter-text-color: #000000;
+  --global-tip-block: #42b983;
+  --global-tip-block-bg: #e2f5ec;
+  --global-tip-block-text: #215d42;
+  --global-tip-block-title: #359469;
+  --global-warning-block: #e7c000;
+  --global-warning-block-bg: #fff8d8;
+  --global-warning-block-text: #6b5900;
+  --global-warning-block-title: #b29400;
+  --global-danger-block: #cc0000;
+  --global-danger-block-bg: #ffe0e0;
+  --global-danger-block-text: #660000;
+  --global-danger-block-title: #cc0000;
+}
+
+// Lighter purple in dark mode for readable contrast against the dark background
+// (matches the $cyan-color token already reserved for this in _variables.scss).
+[data-theme="dark"] {
+  color-scheme: dark;
+  --global-bg-color: #1c1c1d;
+  --global-code-bg-color: #2c3237;
+  --global-text-color: #e8e8e8;
+  --global-text-color-light: #828282;
+  --global-theme-color: #a266ff;
+  --global-hover-color: #a266ff;
+  --global-hover-text-color: #ffffff;
+  --global-footer-bg-color: #e8e8e8;
+  --global-footer-text-color: #1c1c1d;
+  --global-footer-link-color: #000000;
+  --global-distill-app-color: #e8e8e8;
+  --global-divider-color: #424246;
+  --global-card-bg-color: #212529;
+  --global-back-to-top-bg-color: rgba(255, 255, 255, 0.5);
+  --global-back-to-top-text-color: #000000;
+  --global-newsletter-bg-color: #e8e8e8;
+  --global-newsletter-text-color: #1c1c1d;
+  --global-tip-block: #42b983;
+  --global-tip-block-bg: #215d42;
+  --global-tip-block-text: #beffe2;
+  --global-tip-block-title: #e2f5ec;
+  --global-warning-block: #e7c000;
+  --global-warning-block-bg: #6b5900;
+  --global-warning-block-text: #fff2af;
+  --global-warning-block-title: #fff8d8;
+  --global-danger-block: #cc0000;
+  --global-danger-block-bg: #660000;
+  --global-danger-block-text: #ffb9b9;
+  --global-danger-block-title: #ffe0e0;
+}
