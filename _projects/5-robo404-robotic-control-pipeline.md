@@ -5,7 +5,7 @@ description: Jetson-based line-following robot combining a SAC-trained control p
 importance: 5
 category: work
 github: https://github.com/jiucai233/28th-conference-robo404_plus
-img: assets/img/robo404-demo-poster.jpg
+img: assets/img/robo404-cover.png
 ---
 
 {% assign robo404_poster_url = page.img | relative_url %}

@@ -5,7 +5,7 @@ description: Automated receipt audit pipeline using PaddleOCR, RAG with ChromaDB
 importance: 3
 category: work
 github: https://github.com/jiucai233/28th-project-receiptaudit-dev
-img: assets/img/TransparentAudit.png
+img: assets/img/transparent-audit-cover.png
 ---
 
 ## Background
