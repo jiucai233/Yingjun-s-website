@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: AI Engineer | Applied Information Engineering @ Yonsei University
+subtitle: Applied Information Engineering @ Yonsei University
 
 images:
   venobox: true # enables the click-to-enlarge photography gallery below
@@ -32,6 +32,6 @@ latest_posts:
 
 Hello, I am **Yingjun Shen** (Simon / 申英君 / 신영군).
 
-I am a senior at **Yonsei University**, majoring in **Applied Information Engineering**, expecting to graduate in **Spring 2027**. My work sits at the intersection of computer vision and robotics, and I've recently been focusing on **reinforcement learning** and **Vision-Language-Action (VLA) models** — most recently as a research intern at the Agent-Os Lab, and through building ROBO404++, a Jetson-based robotic control pipeline that combines an RL control policy with real-time perception.
+I am a senior at **Yonsei University**, majoring in **Applied Information Engineering**, expecting to graduate in **Spring 2027**. My work sits at the intersection of computer vision and robotics, and I've recently been focusing on **reinforcement learning** and **Vision-Language-Action (VLA) models**   
 
-I thrive in multilingual environments and work fluently across Chinese, Korean, and English. Outside of work, I enjoy playing video games, watching movies, football, and photography. I am currently looking for an **internship** as an AI Engineer or Robotics/CV Research Engineer.
+I thrive in multilingual environments and work fluently across Chinese, Korean, and English. Outside of work, I enjoy playing football and photography.
