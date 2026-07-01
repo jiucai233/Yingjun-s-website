@@ -1,0 +1,404 @@
+/*******************************************************************************
+ * Variables used throughout the theme.
+ * To adjust anything, simply edit the variables below and rebuild the theme.
+ ******************************************************************************/
+
+@use "sass:color";
+
+// Colors
+$red-color: #ff3636 !default;
+$red-color-dark: #b71c1c !default;
+$orange-color: #f29105 !default;
+$blue-color: #0076df !default;
+$blue-color-dark: #00369f !default;
+$cyan-color: #a266ff !default; // Light purple for dark mode compatibility
+$light-cyan-color: color.adjust($cyan-color, $lightness: 25%);
+$green-color: #00ab37 !default;
+$green-color-lime: #b7d12a !default;
+$green-color-dark: #009f06 !default;
+$green-color-light: #ddffdd !default;
+$green-color-bright: #11d68b !default;
+$purple-color: #330066 !default; // Deep purple theme color
+$light-purple-color: color.adjust($purple-color, $lightness: 25%);
+$pink-color: #f92080 !default;
+$pink-color-light: #ffdddd !default;
+$yellow-color: #efcc00 !default;
+
+$grey-color: #828282 !default;
+$grey-color-light: color.adjust($grey-color, $lightness: 40%);
+$grey-color-dark: #1c1c1d;
+$grey-900: #212529;
+
+$white-color: #ffffff !default;
+$black-color: #000000 !default;
+
+// Theme colors
+
+$code-bg-color-light: rgba($purple-color, 0.05);
+$code-bg-color-dark: #2c3237 !default;
+
+// Font awesome location
+$fa-font-path: "../webfonts";
+
+// Back To Top button config
+$back-to-top-z-index: 10;
+$back-to-top-bottom: 30px;
+$back-to-top-right: 30px;
+$back-to-top-diameter: 40px;
+$back-to-top-height: $back-to-top-diameter;
+$back-to-top-width: $back-to-top-diameter;
+
+// Max width default
+$max-content-width: 930px !default;
+
+
+/*******************************************************************************
+ * Portfolio / About Page Layout Styles
+ * Single-page anchor layout inspired by chaemin-hwang.github.io
+ ******************************************************************************/
+
+// ---- Hero Section ----
+.portfolio-hero {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 52px;
+  align-items: start;
+  padding: 44px 0 36px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}
+
+.portfolio-hero-photo {
+  margin-top: 4px;
+
+  img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 3 / 4;
+    border: 1px solid var(--global-divider-color, #e0d8f0);
+    box-shadow: 0 4px 20px rgba(51, 0, 102, 0.10);
+  }
+
+  @media (max-width: 640px) {
+    order: -1;
+    max-width: 140px;
+  }
+}
+
+.portfolio-name {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.portfolio-subtitle {
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: var(--global-text-color-light, #888);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.portfolio-bio {
+  font-size: 0.92rem;
+  line-height: 1.78;
+  color: var(--global-text-color, #333);
+  margin-bottom: 20px;
+
+  p { margin-bottom: 10px; }
+}
+
+// ---- Interest Chips ----
+.interest-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.interest-chip {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--global-theme-color, #330066);
+  color: var(--global-theme-color, #330066);
+  background: transparent;
+  transition: background 0.15s, color 0.15s;
+
+  &:hover {
+    background: var(--global-theme-color, #330066);
+    color: #fff;
+  }
+}
+
+// ---- Contact Links ----
+.portfolio-contact-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.portfolio-contact-link {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--global-theme-color, #330066);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--global-theme-color, #330066);
+  background: transparent;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+
+  &:hover {
+    background: var(--global-theme-color, #330066);
+    color: #fff !important;
+    box-shadow: 0 2px 12px rgba(51, 0, 102, 0.18);
+  }
+
+  i { font-size: 0.85rem; }
+}
+
+// ---- Sections ----
+.portfolio-section {
+  padding: 40px 0;
+  border-top: 1px solid var(--global-divider-color, #ebe5f5);
+  scroll-margin-top: 70px; // account for sticky navbar height
+}
+
+.portfolio-section-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--global-theme-color, #330066);
+  margin-bottom: 24px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--global-theme-color, #330066);
+  display: inline-block;
+}
+
+// ---- Education ----
+.portfolio-edu-item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 16px 0;
+}
+
+.portfolio-edu-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4px;
+}
+
+.portfolio-edu-name {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--global-text-color, #222);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.portfolio-edu-period {
+  font-size: 0.77rem;
+  color: var(--global-text-color-light, #888);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.portfolio-edu-desc {
+  font-size: 0.84rem;
+  color: var(--global-text-color, #555);
+  line-height: 1.65;
+}
+
+// ---- Projects List ----
+.portfolio-projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.portfolio-project-item {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--global-divider-color, #ebe5f5);
+  transition: background 0.12s;
+
+  &:last-child { border-bottom: none; }
+
+  &:hover {
+    background: rgba(51, 0, 102, 0.03);
+    border-radius: 8px;
+    margin: 0 -12px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  @media (max-width: 580px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.portfolio-project-thumb {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--global-divider-color, #ddd);
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+.portfolio-project-thumb-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  background: rgba(51, 0, 102, 0.08);
+  border-radius: 8px;
+  border: 1px solid rgba(51, 0, 102, 0.15);
+  color: var(--global-theme-color, #330066);
+  font-size: 1.4rem;
+}
+
+.portfolio-project-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.portfolio-project-title {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--global-text-color, #222);
+  text-decoration: none;
+  transition: color 0.15s;
+
+  &:hover { color: var(--global-theme-color, #330066); }
+}
+
+.portfolio-project-github {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 8px;
+  color: var(--global-text-color-light, #888);
+  font-size: 0.9rem;
+  transition: color 0.15s;
+
+  &:hover { color: var(--global-theme-color, #330066); }
+}
+
+.portfolio-project-desc {
+  font-size: 0.82rem;
+  color: var(--global-text-color-light, #666);
+  line-height: 1.6;
+  margin: 2px 0;
+}
+
+.portfolio-project-badge {
+  font-size: 0.7rem;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+
+  &.badge-work {
+    background: rgba(51, 0, 102, 0.1);
+    color: #330066;
+  }
+  &.badge-research {
+    background: rgba(0, 100, 200, 0.1);
+    color: #004080;
+  }
+}
+
+// ---- Honors / List Items ----
+.portfolio-list-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.portfolio-list-item {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  grid-template-rows: auto auto;
+  gap: 2px 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--global-divider-color, #ebe5f5);
+  align-items: start;
+
+  &:last-child { border-bottom: none; }
+}
+
+.portfolio-list-year {
+  font-size: 0.75rem;
+  color: var(--global-text-color-light, #888);
+  grid-row: 1 / 3;
+  grid-column: 1;
+  padding-top: 2px;
+  font-style: italic;
+}
+
+.portfolio-list-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--global-text-color, #222);
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.portfolio-list-desc {
+  font-size: 0.82rem;
+  color: var(--global-text-color-light, #666);
+  line-height: 1.55;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+// ---- Blog section view-all link ----
+.portfolio-blog-more {
+  margin-top: 16px;
+  text-align: right;
+}
+
+.portfolio-view-all {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--global-theme-color, #330066);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.15s;
+
+  &:hover { border-bottom-color: var(--global-theme-color, #330066); }
+}
+
+.portfolio-social {
+  padding: 24px 0 8px;
+  border-top: 1px solid var(--global-divider-color, #ebe5f5);
+}
+
+.selected-papers-note {
+  margin-top: 12px;
+  font-size: 0.8rem;
+  color: var(--global-text-color-light, #888);
+
+  a { color: var(--global-theme-color, #330066); }
+}

@@ -1,0 +1,177 @@
+---
+layout: default
+---
+<div class="post about-page">
+  <!-- ======================================================
+       HERO SECTION
+       ====================================================== -->
+  <div class="portfolio-hero">
+    <div class="portfolio-hero-text">
+      <h1 class="portfolio-name">
+        {% if site.title == 'blank' %}
+          <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
+        {% else %}
+          {{ site.title }}
+        {% endif %}
+      </h1>
+      <p class="portfolio-subtitle">{{ page.subtitle }}</p>
+
+      <div class="portfolio-bio">
+        {{ content }}
+      </div>
+
+      <!-- Interest Chips -->
+      <div class="interest-chips">
+        <span class="interest-chip">Deep Learning</span>
+        <span class="interest-chip">Computer Vision</span>
+        <span class="interest-chip">Generative AI</span>
+        <span class="interest-chip">RAG Systems</span>
+        <span class="interest-chip">Medical Imaging</span>
+        <span class="interest-chip">NLP</span>
+      </div>
+
+      <!-- Contact Links -->
+      <div class="portfolio-contact-links">
+        {% if site.data.socials.email %}
+        <a class="portfolio-contact-link" href="mailto:{{ site.data.socials.email | encode_email }}">
+          <i class="fa-solid fa-envelope"></i> Email
+        </a>
+        {% endif %}
+        <a class="portfolio-contact-link" href="{{ '/cv/' | relative_url }}">
+          <i class="fa-solid fa-file-lines"></i> CV
+        </a>
+        {% if site.data.socials.github_username %}
+        <a class="portfolio-contact-link" href="https://github.com/{{ site.data.socials.github_username }}" target="_blank" rel="noopener">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        {% endif %}
+      </div>
+    </div>
+
+    {% if page.profile %}
+    <div class="portfolio-hero-photo">
+      {% if page.profile.image %}
+        {% assign profile_image_path = page.profile.image | prepend: 'assets/img/' %}
+        {% assign profile_image_class = 'img-fluid z-depth-1 rounded' %}
+        {% capture sizes %}(min-width: {{ site.max_width }}) {{ site.max_width | minus: 30 | times: 0.3}}px, (min-width: 576px) 30vw, 95vw"{% endcapture %}
+        {%
+          include figure.liquid loading="eager" path=profile_image_path class=profile_image_class sizes=sizes alt=page.profile.image
+          cache_bust=true
+        %}
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+
+  <article class="about-sections">
+
+    <!-- ======================================================
+         EDUCATION SECTION
+         ====================================================== -->
+    <section id="education" class="portfolio-section">
+      <p class="portfolio-section-label">Education</p>
+      <div class="portfolio-edu-item">
+        <div class="portfolio-edu-logo">
+          <i class="fa-solid fa-graduation-cap fa-2x" style="color: var(--global-theme-color);"></i>
+        </div>
+        <div class="portfolio-edu-info">
+          <span class="portfolio-edu-name">Yonsei University, Seoul, South Korea</span>
+          <span class="portfolio-edu-period">Mar. 2023 – Present</span>
+          <span class="portfolio-edu-desc">
+            B.Eng. in Applied Information Engineering (Global Leaders College)<br>
+            Focus: Data Science &amp; Machine Learning<br>
+            Yonsei Merit-Based Scholarship (2023–2025)
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         PROJECTS SECTION
+         ====================================================== -->
+    <section id="projects" class="portfolio-section">
+      <p class="portfolio-section-label">Projects</p>
+      <div class="portfolio-projects-list">
+        {% assign sorted_projects = site.projects | sort: "importance" %}
+        {% for project in sorted_projects %}
+          <div class="portfolio-project-item">
+            {% if project.img %}
+            <img class="portfolio-project-thumb"
+                 src="{{ project.img | relative_url }}"
+                 alt="{{ project.title }}" />
+            {% else %}
+            <div class="portfolio-project-thumb portfolio-project-thumb-placeholder">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            {% endif %}
+            <div class="portfolio-project-body">
+              <a class="portfolio-project-title" href="{{ project.url | relative_url }}">{{ project.title }}</a>
+              {% if project.github %}
+              <a class="portfolio-project-github" href="{{ project.github }}" target="_blank" rel="noopener" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              {% endif %}
+              <p class="portfolio-project-desc">{{ project.description }}</p>
+              {% if project.category %}
+              <span class="portfolio-project-badge badge-{{ project.category }}">{{ project.category }}</span>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </section>
+
+    <!-- ======================================================
+         HONORS & AWARDS SECTION
+         ====================================================== -->
+    <section id="honors" class="portfolio-section">
+      <p class="portfolio-section-label">Honors &amp; Awards</p>
+      <div class="portfolio-list-items">
+        <div class="portfolio-list-item">
+          <span class="portfolio-list-year">2023–2025</span>
+          <span class="portfolio-list-title">Yonsei University Merit-Based Scholarship</span>
+          <span class="portfolio-list-desc">Academic tuition scholarship based on merit.</span>
+        </div>
+        <div class="portfolio-list-item">
+          <span class="portfolio-list-year">2024</span>
+          <span class="portfolio-list-title">GLC-SeAh Holdings Scholarship</span>
+          <span class="portfolio-list-desc">Awarded by SeAh Holdings based on leadership potential and engineering excellence.</span>
+        </div>
+        <div class="portfolio-list-item">
+          <span class="portfolio-list-year">2024</span>
+          <span class="portfolio-list-title">GLC Distinction Award</span>
+          <span class="portfolio-list-desc">Academic excellence award in Information Software Engineering, Global Leaders College.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         BLOG / LATEST POSTS SECTION
+         ====================================================== -->
+    <section id="blog" class="portfolio-section">
+      <p class="portfolio-section-label">Latest Posts</p>
+      {% include latest_posts.liquid %}
+      <div class="portfolio-blog-more">
+        <a href="{{ '/blog/' | relative_url }}" class="portfolio-view-all">View all posts →</a>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         SOCIAL ICONS
+         ====================================================== -->
+    {% if page.social %}
+    <div class="social portfolio-social">
+      <div class="contact-icons">{% social_links %}</div>
+      <div class="contact-note">{{ site.contact_note }}</div>
+    </div>
+    {% endif %}
+
+    {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
+      {% if site.plugins contains 'al_newsletter' %}
+        {% include plugins/al_newsletter_form_center_margin.liquid %}
+      {% else %}
+        {% include newsletter.liquid center=true %}
+      {% endif %}
+    {% endif %}
+  </article>
+</div>

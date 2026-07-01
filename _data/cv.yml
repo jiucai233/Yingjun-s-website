@@ -1,189 +1,143 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
-  image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  name: Yingjun Shen
+  label: AI Engineer
+  email: jiucai@yonsei.ac.kr
+  phone: "+82 10-2713-1677"
+  location: Seoul, South Korea
+  image: prof_pic.jpg
+  summary: AI Engineer focusing on computer vision, generative models, and multi-language AI systems. Experienced in deploying real AI services including YOLO detection, voice assistants, and RAG chatbots. Able to work across Korean, English, and Chinese environments with strong engineering execution.
 
   social_networks:
-    - network: X
-      username: AlbertEinstein
     - network: GitHub
-      username: example
-    - network: LinkedIn
-      username: example
-
-  address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
+      username: jiucai233
+      url: https://github.com/jiucai233
 
   sections:
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
-        highlights:
-          - Description 1.
-          - Description 2.
+      - institution: Yonsei University
+        location: Seoul, South Korea
+        url: https://www.yonsei.ac.kr
+        area: Applied Information Engineering
+        studyType: B.E. in Applied Information Engineering (GPA 3.83/4.3)
+        start_date: 2022
+        end_date: 2027
 
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
-        highlights:
-          - Description 1.
-          - Description 2.
+      - institution: Beijing Foreign Studies University (BFSU) International School
+        location: Beijing, China
+        area: High School Diploma
+        studyType: High School Diploma
+        start_date: 2019
+        end_date: 2022
 
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - company: Agent-Os Lab, Yonsei University
+        position: Research Intern
+        location: Seoul, South Korea
+        start_date: 2026-04
+        end_date: Present
+        summary: Developing Vision-Grounded Speech Repair (VGSR), a framework to mitigate STT errors in robotic task execution by leveraging object-graph and spatial relation inference; currently drafting a research paper for submission.
+
+      - company: YBIGTA (Yonsei Big Data Society)
+        position: Core Member, Data Engineering Team
+        location: Seoul, South Korea
+        start_date: 2025-12
+        end_date: Present
+        summary: Engineering data pipelines, robotic control systems, and MLOps infrastructure for the Data Engineering Team.
         highlights:
-          - Relativity
-          - Description 2.
+          - "ROBO404++ (Robotic Control Pipeline): Engineered an autonomous navigation simulation using Soft Actor-Critic (SAC); optimized real-time perception by integrating YOLO with ONNX, achieving a streamlined Perception-Control Loop in ROS."
+          - "Transparent-Audit System: Designed a scalable backend with FastAPI and LLM integration for high-speed receipt parsing and real-time anomaly detection, complemented by a custom metrics logging pipeline."
+          - "MLOps Infrastructure: Orchestrated containerized application deployments using Docker and implemented foundational model serving pipelines within Kubernetes clusters."
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+      - company: Yonsei GLC Foreign Student Council
+        position: President
+        location: Seoul, South Korea
+        start_date: 2025
+        end_date: 2025
+        summary: Led the Foreign Student Council, represented international student interests, and managed translation and publicity initiatives.
         highlights:
-          - Description 1.
-          - Description 2.
+          - Served as Lead of Translate & Promotion Department (2024)
 
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+      - company: Yonsei University Chinese Student Council (YSCSSA)
+        position: President
+        location: Seoul, South Korea
+        start_date: 2025
+        end_date: 2025
+        summary: Led the multimedia production and coordinated academic and social events for Chinese students.
         highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
+          - Lead and Member of Multimedia Department (2023-2024)
 
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
+      - company: DSL (Yonsei Data Science Lab)
+        position: Research Member
+        location: Seoul, South Korea
+        start_date: 2024-03
+        end_date: 2025-03
+        summary: Developed conditional generative models for custom image synthesis and fine-tuned YOLO architectures for specialized food detection datasets; applied deep learning techniques to medical image segmentation and precision editing algorithms.
 
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
-
-    Publications:
-      - title: Zur Elektrodynamik bewegter Körper
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
-
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
-
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
-
-    Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Languages:
-      - name: German
-        summary: "Native speaker"
-
-      - name: English
-        summary: "Fluent"
-
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
+      - company: Yonsei GLC School Magazine (Discovery)
+        position: Chinese & Korean Editor
+        location: Seoul, South Korea
+        start_date: 2024
+        end_date: 2025
+        summary: Translated and edited articles for the school magazine in both Chinese and Korean.
 
     Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
+      - name: Departmental Official Website Development
+        summary: Full-stack Developer
+        start_date: 2026-04
+        end_date: Present
         highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
+          - Architected a high-performance website using Next.js/React, implementing CRUD features and vector-based search capabilities.
+          - Managed CI/CD deployment via PM2, ensuring service stability and operational scalability.
 
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+    Awards:
+      - title: 1st Place, YBIGTA 26-1 Conference Project
+        date: 2026-06
+        awarder: Yonsei University
 
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - title: Yonsei University Merit-Based Scholarship
+        date: 2023-2025
+        awarder: Yonsei University
+        summary: Merit-based academic tuition scholarship.
+
+      - title: GLC-SeAh Holdings Scholarship
+        date: 2024
+        awarder: SeAh Holdings
+        summary: Selection based on leadership and engineering potential.
+
+      - title: GLC Distinction Award
+        date: 2024
+        awarder: Global Leaders College
+        summary: Academic excellence award in Information Software Engineering.
+
+    Skills:
+      - name: Programming Languages
+        keywords: Python, JavaScript, TypeScript, Bash
+
+      - name: Deep Learning & ML
+        keywords: PyTorch, YOLO, Diffusion Models, RAG, ONNX
+
+      - name: MLOps & Deployment
+        keywords: FastAPI, Next.js, React, Vercel, Docker, Kubernetes, AWS, Git/GitHub, Linux
+
+      - name: Robotics
+        keywords: ROS, Gazebo, Soft Actor-Critic (SAC)
+
+      - name: Data Science & Computer Vision
+        keywords: OpenCV, Pandas, NumPy
+
+    Languages:
+      - name: Chinese
+        summary: Native speaker
+
+      - name: Korean
+        summary: TOPIK Level 5
+
+      - name: English
+        summary: IELTS Band 6.5
+
+    Interests:
+      - name: Deep Learning
+      - name: Natural Language Processing
+      - name: Generative AI
+      - name: Medical Imaging
+      - name: Robotics
