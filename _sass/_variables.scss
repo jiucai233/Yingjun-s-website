@@ -403,6 +403,37 @@ $max-content-width: 930px !default;
   a { color: var(--global-theme-color, #330066); }
 }
 
+// ---- Photography gallery ----
+.portfolio-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.portfolio-photo-item {
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid var(--global-divider-color, #ebe5f5);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.2s;
+  }
+
+  &:hover img {
+    transform: scale(1.05);
+  }
+}
+
 // ---- Portrait demo videos on project pages ----
 // Caps phone-recorded (9:16) demo clips to a sane box instead of stretching
 // to full page width at full native height.

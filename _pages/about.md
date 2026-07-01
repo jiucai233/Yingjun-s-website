@@ -4,6 +4,9 @@ title: about
 permalink: /
 subtitle: AI Engineer | Applied Information Engineering @ Yonsei University
 
+images:
+  venobox: true # enables the click-to-enlarge photography gallery below
+
 profile:
   align: right
   image: prof_pic.jpg
@@ -29,8 +32,6 @@ latest_posts:
 
 Hello, I am **Yingjun Shen** (Simon / 申英君 / 신영군).
 
-I am an AI Engineer focusing on computer vision, generative models, and multi-language AI systems. I am currently enrolled in **Yonsei University**, majoring in **Applied Information Engineering** (Global Leaders College), with a focus on data science and machine learning.
+I am a senior at **Yonsei University**, majoring in **Applied Information Engineering**, expecting to graduate in **Spring 2027**. My work sits at the intersection of computer vision and robotics, and I've recently been focusing on **reinforcement learning** and **Vision-Language-Action (VLA) models** — most recently as a research intern at the Agent-Os Lab, and through building ROBO404++, a Jetson-based robotic control pipeline that combines an RL control policy with real-time perception.
 
-I am passionate about learning new technologies, analyzing real-world datasets, and building practical, user-facing AI applications. My favorite part of programming and AI is building models that learn from data — it's like watching a child grow, and it gives me a great sense of accomplishment. I have experience deploying real-world AI services, including YOLO-based detection pipelines, voice assistants, and Graph RAG chatbots. I thrive in multilingual environments and can work fluently across Chinese, Korean, and English.
-
-When I'm not coding, I enjoy playing video games, watching movies, playing football, and photography. I am currently looking for an **internship** as a Data Scientist or AI Engineer.
+I thrive in multilingual environments and work fluently across Chinese, Korean, and English. Outside of work, I enjoy playing video games, watching movies, football, and photography. I am currently looking for an **internship** as an AI Engineer or Robotics/CV Research Engineer.

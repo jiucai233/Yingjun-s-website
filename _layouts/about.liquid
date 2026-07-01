@@ -22,12 +22,9 @@ layout: default
 
       <!-- Interest Chips -->
       <div class="interest-chips">
-        <span class="interest-chip">Deep Learning</span>
         <span class="interest-chip">Computer Vision</span>
-        <span class="interest-chip">Generative AI</span>
-        <span class="interest-chip">RAG Systems</span>
-        <span class="interest-chip">Medical Imaging</span>
-        <span class="interest-chip">NLP</span>
+        <span class="interest-chip">Robotics</span>
+        <span class="interest-chip">Representation Learning</span>
       </div>
 
       <!-- Contact Links -->
@@ -76,9 +73,9 @@ layout: default
         </div>
         <div class="portfolio-edu-info">
           <span class="portfolio-edu-name">Yonsei University, Seoul, South Korea</span>
-          <span class="portfolio-edu-period">Mar. 2023 – Present</span>
+          <span class="portfolio-edu-period">2022 – 2027</span>
           <span class="portfolio-edu-desc">
-            B.Eng. in Applied Information Engineering (Global Leaders College)<br>
+            B.E. in Applied Information Engineering (GPA 3.83/4.3)<br>
             Focus: Data Science &amp; Machine Learning<br>
             Yonsei Merit-Based Scholarship (2023–2025)
           </span>
@@ -128,6 +125,11 @@ layout: default
       <p class="portfolio-section-label">Honors &amp; Awards</p>
       <div class="portfolio-list-items">
         <div class="portfolio-list-item">
+          <span class="portfolio-list-year">2026</span>
+          <span class="portfolio-list-title">1st Place, YBIGTA 26-1 Conference Project</span>
+          <span class="portfolio-list-desc">Won for ROBO404++, a Jetson-based line-following and traffic-light-aware robotic control pipeline.</span>
+        </div>
+        <div class="portfolio-list-item">
           <span class="portfolio-list-year">2023–2025</span>
           <span class="portfolio-list-title">Yonsei University Merit-Based Scholarship</span>
           <span class="portfolio-list-desc">Academic tuition scholarship based on merit.</span>
@@ -153,6 +155,22 @@ layout: default
       {% include latest_posts.liquid %}
       <div class="portfolio-blog-more">
         <a href="{{ '/blog/' | relative_url }}" class="portfolio-view-all">View all posts →</a>
+      </div>
+    </section>
+
+    <!-- ======================================================
+         PHOTOGRAPHY SECTION
+         ====================================================== -->
+    <section id="photography" class="portfolio-section">
+      <p class="portfolio-section-label">Photography</p>
+      <div class="portfolio-photo-grid">
+        {% assign photos = "BukHanSan.jpg,JiangHuaDao.jpg,JiaoLou.jpg,JinDingQiao.jpg,SeokChonHoSuSakura.jpg,TianKongGongYuan.jpg,YonseiAutumn.jpg,Chair.jpg" | split: "," %}
+        {% for photo in photos %}
+          {% assign photo_path = photo | prepend: "assets/img/" | relative_url %}
+          <a class="venobox portfolio-photo-item" href="{{ photo_path }}" data-gall="photography" data-title="{{ photo | remove: '.jpg' | remove: '.png' }}">
+            <img src="{{ photo_path }}" alt="{{ photo | remove: '.jpg' | remove: '.png' }}" loading="lazy" />
+          </a>
+        {% endfor %}
       </div>
     </section>
 
