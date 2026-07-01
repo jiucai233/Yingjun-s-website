@@ -1,0 +1,184 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> ROBO404++: Robotic Control Pipeline | Yingjun Shen </title> <meta name="author" content="Yingjun Shen"> <meta name="description" content="Jetson-based line-following robot combining a SAC-trained control policy with a real-time YOLO/TensorRT traffic-light perception loop in ROS2"> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+  :root {
+    --max-content-width: 930px;
+  }
+</style> <link rel="stylesheet" href="/Yingjun-s-website/assets/css/tailwind.css?v=50c64c15cbb9fd1ce6056fdb8bcb4b62"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@7.2.0/css/all.min.css" integrity="sha256-MVopmdyC2tYTiJ8wlktf0uh0v4NgT+vNdyVFepi7Q0c=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.5/css/academicons.min.css" integrity="sha256-SzrCOBJbGVFMahewkgjwnApaV2+av1DwMAA+/QGLyZw=" crossorigin="anonymous"> <link defer rel="stylesheet" href="https://cdn.jsdelivr.net/npm/scholar-icons@1.0.3/css/scholar-icons.css" integrity="sha256-VY3hHVj/hNX3fYG6wtbA6TcKJQl7+FthzGSyIB64klY=" crossorigin="anonymous"> <link defer rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons&amp;display=swap"> <link defer rel="stylesheet" href="/Yingjun-s-website/assets/css/jekyll-pygments-themes-github.css?v=591dab5a4e56573bf4ef7fd332894c99" media="" id="highlight_theme_light"> <link rel="shortcut icon" href="data:image/svg+xml,&lt;svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22&gt;&lt;text%20y=%22.9em%22%20font-size=%2290%22&gt;%E2%9A%9B%EF%B8%8F&lt;/text&gt;&lt;/svg&gt;"> <link rel="stylesheet" href="/Yingjun-s-website/assets/css/main.css?v=f0b101217084a90093badfe99ff9a7d1"> <link rel="canonical" href="https://jiucai233.github.io/Yingjun-s-website/projects/5-robo404-robotic-control-pipeline/"> <script src="/Yingjun-s-website/assets/js/theme.js?v=7af685e2ba20b37fef545c97b8064050"></script> <link defer rel="stylesheet" href="/Yingjun-s-website/assets/css/jekyll-pygments-themes-native.css?v=5847e5ed4a4568527aa6cfab446049ca" media="none" id="highlight_theme_dark"> <script>
+    initTheme();
+  </script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/Yingjun-s-website/"> <span class="font-weight-bold">Yingjun</span> Shen </a> <button class="navbar-toggler collapsed navbar-toggler-main" type="button" data-nav-toggle="navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse navbar-collapse-main" id="navbarNav"> <ul class="navbar-nav navbar-menu-list flex-nowrap"> <li class="nav-item"> <a class="nav-link" href="/Yingjun-s-website/#education">Education</a> </li> <li class="nav-item"> <a class="nav-link" href="/Yingjun-s-website/#projects">Projects</a> </li> <li class="nav-item"> <a class="nav-link" href="/Yingjun-s-website/#honors">Honors</a> </li> <li class="nav-item "> <a class="nav-link" href="/Yingjun-s-website/blog/">Blog</a> </li> <li class="nav-item "> <a class="nav-link" href="/Yingjun-s-website/cv/">CV</a> </li> <li class="nav-item"> <button id="search-toggle" type="button" title="Search" aria-label="Open search"> <span class="nav-link">ctrl k <i class="fa-solid fa-magnifying-glass"></i></span> </button> </li> <li class="toggle-container"> <button id="light-toggle" type="button" title="Change theme" aria-label="Change color theme"> <i class="fa-half-sun-moon" id="light-toggle-system"></i> <i class="fa-solid fa-moon" id="light-toggle-dark"></i> <i class="fa-solid fa-sun" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">ROBO404++: Robotic Control Pipeline</h1> <p class="post-description">Jetson-based line-following robot combining a SAC-trained control policy with a real-time YOLO/TensorRT traffic-light perception loop in ROS2</p> </header> <article> <figure> <video src="/Yingjun-s-website/assets/video/robo404-demo.mp4" class="portfolio-video-portrait rounded z-depth-1" width="auto" height="auto" autoplay="" controls="" loop="" muted="" poster="/Yingjun-s-website/assets/img/robo404-cover.png"></video> <figcaption class="caption">Real-car demo — line following, traffic-light stop/go</figcaption> </figure> <h2 id="background">Background</h2> <p>Built as part of the <strong>YBIGTA (Yonsei Big Data Society)</strong> Data Engineering Team’s robotics track. ROBO404++ is a Jetson-based robot that follows a line, obeys a traffic light, and recovers when it loses the line — the first-phase scope runs end-to-end from raw camera input to the final <code class="language-plaintext highlighter-rouge">/cmd_vel</code> motor command.</p> <h2 id="architecture">Architecture</h2> <p>The pipeline splits perception and decision-making across two CSI cameras and a single arbitrating node:</p> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bottom Camera → follower_node        → /cmd_vel_line, /path_state
+Top Camera    → yolo_node (TensorRT) → /yolo/detections
+                → traffic_light_node → /traffic_light_state
+
+decision_node ← /cmd_vel_line, /path_state, /traffic_light_state
+              → /cmd_vel   (the only node allowed to publish the final drive command)
+</code></pre></div></div> <ul> <li> <strong>Control:</strong> <code class="language-plaintext highlighter-rouge">follower_node</code> only proposes a line-following candidate velocity (<code class="language-plaintext highlighter-rouge">/cmd_vel_line</code>); a dedicated <code class="language-plaintext highlighter-rouge">decision_node</code> is the single point that fuses line state and traffic-light state into the actual <code class="language-plaintext highlighter-rouge">/cmd_vel</code> sent to the motors — this separation is what let traffic-light stopping and line-recovery behavior be added without destabilizing line following.</li> <li> <strong>RL Control Policy:</strong> A Soft Actor-Critic (SAC) agent is trained (<code class="language-plaintext highlighter-rouge">train_agent.py</code>, TensorBoard-logged) against a custom line-tracking environment and exported to ONNX (<code class="language-plaintext highlighter-rouge">export_onnx.py</code>) for on-device inference.</li> <li> <strong>Perception:</strong> YOLO runs on Jetson via TensorRT (<code class="language-plaintext highlighter-rouge">yolo_jetson</code>) on the top camera feed to detect the traffic light; a <code class="language-plaintext highlighter-rouge">traffic_light_node</code> turns detections into a discrete state (<code class="language-plaintext highlighter-rouge">/traffic_light_state</code>) consumed by the decision node.</li> <li> <strong>Debugging:</strong> A <code class="language-plaintext highlighter-rouge">debug_monitor_node</code> aggregates all pipeline topics and warnings into a single <code class="language-plaintext highlighter-rouge">/debug/pipeline_state</code> stream for live diagnosis.</li> </ul> <h2 id="my-contributions">My Contributions</h2> <ul> <li>Designed and trained the SAC-based line-tracking control policy and exported it to ONNX for real-time Jetson inference.</li> <li>Built the YOLO/TensorRT traffic-light detection path and integrated it with the decision node.</li> <li>Helped define the <code class="language-plaintext highlighter-rouge">decision_node</code>-only <code class="language-plaintext highlighter-rouge">/cmd_vel</code> contract so perception and control could evolve independently.</li> </ul> <h2 id="results--impact">Results &amp; Impact</h2> <ul> <li>Shipped a working end-to-end pipeline: line following, traffic-light stop/go, and line-loss recovery, running live on Jetson hardware.</li> <li>Won <strong>1st Place at the YBIGTA 26-1 Conference</strong> for this project.</li> </ul> <h2 id="tech-stack">Tech Stack</h2> <p><strong>ROS2 · Jetson · TensorRT · YOLO · Soft Actor-Critic (SAC) · ONNX · Python</strong></p> </article> </div> </div> <footer class="fixed-bottom" role="contentinfo"> <div class="container mt-0"> © Copyright 2026 Yingjun Shen. Powered by <a href="https://jekyllrb.com/" target="_blank" rel="external nofollow noopener">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" rel="external nofollow noopener" target="_blank">al-folio</a> theme. Hosted by <a href="https://pages.github.com/" target="_blank" rel="external nofollow noopener">GitHub Pages</a>. Photos from <a href="https://unsplash.com" target="_blank" rel="external nofollow noopener">Unsplash</a>. </div> </footer> <script>
+  window.alFolio = {
+    compatBootstrap: false
+  };
+</script> <script src="/Yingjun-s-website/assets/js/nav-toggle.js?v=141bd79a73ebc0f0b6ea58e440ae79fc"></script> <script defer src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script> <script defer src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script> <script defer src="/Yingjun-s-website/assets/js/masonry.js?v=e49affc7bd2646f6acdad1dbe02c2359" type="text/javascript"></script> <script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script> <script src="/Yingjun-s-website/assets/al_math/js/mathjax-setup.js"></script> <script defer src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6" crossorigin="anonymous"></script> <script src="/Yingjun-s-website/assets/js/tooltips-setup.js?v=fe487e99db6c43751e6e7bdb2d6a0611"></script> <script src="/Yingjun-s-website/assets/js/no_defer.js?v=53b1b1a645525975c963ce8bf8bfefcf"></script> <script defer src="/Yingjun-s-website/assets/js/common.js?v=87baac90f765f2f3362dcf6aaf312a8a"></script> <script defer src="/Yingjun-s-website/assets/js/copy_code.js?v=c8a01c11a92744d44b093fc3bda915df" type="text/javascript"></script> <script defer src="/Yingjun-s-website/assets/js/jupyter_new_tab.js?v=896d254890d9b47f0281f63bfccf0dee"></script> <script async src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script> <script async src="https://badge.dimensions.ai/badge.js"></script> <script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js" integrity="sha256-ZgMyDAIYDYGxbcpJcfUnYwNevG/xi9OHKaR/8GK+jWc=" crossorigin="anonymous"></script> <script defer src="/Yingjun-s-website/assets/al_img_tools/js/zoom.js"></script> <script defer src="/Yingjun-s-website/assets/js/progress-bar.js?v=499464c5c63ced6cf7ad62509f1e2610" type="text/javascript"></script> <script src="https://cdn.jsdelivr.net/npm/vanilla-back-to-top@7.2.1/dist/vanilla-back-to-top.min.js" integrity="sha256-uMJJ3EoTyfRBoTbR+lrfu1uRQ87RZG8AR3cVNuQVeFg=" crossorigin="anonymous"></script> <script>
+    addBackToTop();
+  </script> <script type="module" src="/Yingjun-s-website/assets/al_search/js/search/ninja-keys.min.js"></script> <ninja-keys hidebreadcrumbs noautoloadmdicons placeholder="Type to start searching"></ninja-keys> <script src="/Yingjun-s-website/assets/al_search/js/search-setup.js"></script> <script>
+// get the ninja-keys element
+const ninja = document.querySelector('ninja-keys');
+
+// add the home and posts menu items
+ninja.data = [{
+    id: "nav-about",
+    title: "about",
+    section: "Navigation",
+    handler: () => {
+      window.location.href = "/Yingjun-s-website/";
+    },
+  },{id: "nav-blog",
+          title: "blog",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/Yingjun-s-website/blog/";
+          },
+        },{id: "nav-projects",
+          title: "projects",
+          description: "Projects in AI, data science, and web development.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/Yingjun-s-website/projects/";
+          },
+        },{id: "nav-cv",
+          title: "CV",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/Yingjun-s-website/cv/";
+          },
+        },{id: "post-paper-review-3d-vla-bridging-3d-representations-into-vision-language-action-models",
+        
+          title: "Paper Review: 3D-VLA — Bridging 3D Representations into Vision-Language-Action Models",
+        
+        description: "Reviewing 3D-VLA&#39;s approach to injecting 3D understanding into VLA models — custom dataset construction, interaction tokens, dual diffusion model goal imagination, and multi-stage transformer alignment.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/Yingjun-s-website/blog/2026/3d-vla-paper-review/";
+          
+        },
+      },{id: "post-paper-review-openvla-open-source-vision-language-action-model",
+        
+          title: "Paper Review: OpenVLA — Open-Source Vision-Language-Action Model",
+        
+        description: "A deep dive into OpenVLA&#39;s architecture — dual vision backbone, action tokenization, and data mixing strategy that enables a 7B model to achieve strong generalization in robotic manipulation.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/Yingjun-s-website/blog/2026/openvla-paper-review/";
+          
+        },
+      },{id: "books-the-godfather",
+          title: 'The Godfather',
+          description: "",
+          section: "Books",handler: () => {
+              window.location.href = "/Yingjun-s-website/books/the_godfather/";
+            },},{id: "news-received-glc-distinction-award-in-information-software-engineering",
+          title: 'Received GLC Distinction Award in Information Software Engineering.',
+          description: "",
+          section: "News",},{id: "news-received-the-glc-seah-holdings-scholarship-for-leadership-and-engineering-potential",
+          title: 'Received the GLC-SeAh Holdings Scholarship for leadership and engineering potential.',
+          description: "",
+          section: "News",},{id: "news-elected-as-president-of-the-yonsei-glc-foreign-student-council-and-yscssa-for-2025-sparkles",
+          title: 'Elected as President of the Yonsei GLC Foreign Student Council and YSCSSA for...',
+          description: "",
+          section: "News",},{id: "projects-food-detection-by-yolo",
+          title: 'Food Detection by YOLO',
+          description: "Food detection system for delivery services using YOLOv8 nano — custom dataset built from enterprise CCTV footage, with a full data pipeline I designed end-to-end",
+          section: "Projects",handler: () => {
+              window.location.href = "/Yingjun-s-website/projects/1-food-detection-by-yolo/";
+            },},{id: "projects-conditional-eyebrow-image-generation",
+          title: 'Conditional Eyebrow Image Generation',
+          description: "Celebrity-style eyebrow transfer using Stable Diffusion with LoRA adapters, BiSeNet face parsing, and LaMa inpainting",
+          section: "Projects",handler: () => {
+              window.location.href = "/Yingjun-s-website/projects/2-conditional-image-generation/";
+            },},{id: "projects-transparent-audit-smart-receipt-audit-system",
+          title: 'Transparent-Audit: Smart Receipt Audit System',
+          description: "Automated receipt audit pipeline using PaddleOCR, RAG with ChromaDB, and LLM-based compliance reasoning",
+          section: "Projects",handler: () => {
+              window.location.href = "/Yingjun-s-website/projects/3-transparent-audit/";
+            },},{id: "projects-scope-slice-consistent-pet-reconstruction-with-2d-bbdm",
+          title: 'SCOPE: Slice-Consistent PET Reconstruction with 2D BBDM',
+          description: "Medical image reconstruction addressing noise and slice inconsistency in PET imaging using 2D Bilateral Boundary Diffusion Models",
+          section: "Projects",handler: () => {
+              window.location.href = "/Yingjun-s-website/projects/4-scope-pet-reconstruction/";
+            },},{id: "projects-robo404-robotic-control-pipeline",
+          title: 'ROBO404++: Robotic Control Pipeline',
+          description: "Jetson-based line-following robot combining a SAC-trained control policy with a real-time YOLO/TensorRT traffic-light perception loop in ROS2",
+          section: "Projects",handler: () => {
+              window.location.href = "/Yingjun-s-website/projects/5-robo404-robotic-control-pipeline/";
+            },},{id: "projects-departmental-official-website-development",
+          title: 'Departmental Official Website Development',
+          description: "Full-stack department website built with Next.js/React, featuring CRUD content management and vector-based search",
+          section: "Projects",handler: () => {
+              window.location.href = "/Yingjun-s-website/projects/6-departmental-website/";
+            },},{id: "teachings-data-science-fundamentals",
+          title: 'Data Science Fundamentals',
+          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/Yingjun-s-website/teachings/data-science-fundamentals/";
+            },},{id: "teachings-introduction-to-machine-learning",
+          title: 'Introduction to Machine Learning',
+          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+          section: "Teachings",handler: () => {
+              window.location.href = "/Yingjun-s-website/teachings/introduction-to-machine-learning/";
+            },},{
+        id: 'social-cv',
+        title: 'CV',
+        section: 'Socials',
+        handler: () => {
+          window.open("/Yingjun-s-website/assets/pdf/Yingjun_Shen_CV.pdf", "_blank");
+        },
+      },{
+        id: 'social-email',
+        title: 'email',
+        section: 'Socials',
+        handler: () => {
+          window.open("mailto:%69%6D%73%68%65%6E%31%39@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+        },
+      },{
+        id: 'social-github',
+        title: 'GitHub',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://github.com/jiucai233", "_blank");
+        },
+      },{
+        id: 'social-rss',
+        title: 'RSS Feed',
+        section: 'Socials',
+        handler: () => {
+          window.open("/Yingjun-s-website/feed.xml", "_blank");
+        },
+      },{
+      id: 'light-theme',
+      title: 'Change theme to light',
+      description: 'Change the theme of the site to Light',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("light");
+      },
+    },
+    {
+      id: 'dark-theme',
+      title: 'Change theme to dark',
+      description: 'Change the theme of the site to Dark',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("dark");
+      },
+    },
+    {
+      id: 'system-theme',
+      title: 'Use system default theme',
+      description: 'Change the theme of the site to System Default',
+      section: 'Theme',
+      handler: () => {
+        setThemeSetting("system");
+      },
+    },];
+
+</script> <script src="/Yingjun-s-website/assets/al_search/js/shortcut-key.js"></script> </body> </html>
