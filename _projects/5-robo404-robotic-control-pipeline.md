@@ -9,7 +9,7 @@ img: assets/img/robo404-demo-poster.jpg
 ---
 
 {% assign robo404_poster_url = page.img | relative_url %}
-{% include video.liquid path="assets/video/robo404-demo.mp4" class="img-fluid rounded z-depth-1" poster=robo404_poster_url autoplay=true loop=true muted=true controls=true caption="Real-car demo — line following, traffic-light stop/go" %}
+{% include video.liquid path="assets/video/robo404-demo.mp4" class="portfolio-video-portrait rounded z-depth-1" poster=robo404_poster_url autoplay=true loop=true muted=true controls=true caption="Real-car demo — line following, traffic-light stop/go" %}
 
 ## Background
 

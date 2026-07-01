@@ -402,3 +402,14 @@ $max-content-width: 930px !default;
 
   a { color: var(--global-theme-color, #330066); }
 }
+
+// ---- Portrait demo videos on project pages ----
+// Caps phone-recorded (9:16) demo clips to a sane box instead of stretching
+// to full page width at full native height.
+.portfolio-video-portrait {
+  display: block;
+  width: auto;
+  max-width: 340px;
+  max-height: 65vh;
+  margin: 0 auto;
+}
