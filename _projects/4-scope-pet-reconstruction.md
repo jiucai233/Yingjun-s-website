@@ -2,7 +2,7 @@
 layout: page
 title: "SCOPE: Slice-Consistent PET Reconstruction with 2D BBDM"
 description: Medical image reconstruction addressing noise and slice inconsistency in PET imaging using 2D Bilateral Boundary Diffusion Models
-importance: 4
+importance: 5
 category: research
 img: assets/img/SCOPEProject.jpg
 ---

@@ -2,7 +2,7 @@
 layout: page
 title: Food Detection by YOLO
 description: Food detection system for delivery services using YOLOv8 nano — custom dataset built from enterprise CCTV footage, with a full data pipeline I designed end-to-end
-importance: 1
+importance: 2
 category: work
 github: https://github.com/jiucai233/DSL13thEnterpriseProject
 img: assets/img/YoloDetection.jpg

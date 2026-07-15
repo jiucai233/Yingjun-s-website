@@ -2,7 +2,7 @@
 layout: page
 title: "Conditional Eyebrow Image Generation"
 description: Celebrity-style eyebrow transfer using Stable Diffusion with LoRA adapters, BiSeNet face parsing, and LaMa inpainting
-importance: 2
+importance: 3
 category: research
 github: https://github.com/jiucai233/ConditionalImageGeneration
 img: assets/img/ConditionalImageGeneration.png

@@ -2,7 +2,7 @@
 layout: page
 title: "ROBO404++: Robotic Control Pipeline"
 description: Jetson-based line-following robot combining a SAC-trained control policy with a real-time YOLO/TensorRT traffic-light perception loop in ROS2
-importance: 5
+importance: 1
 category: work
 github: https://github.com/jiucai233/28th-conference-robo404_plus
 img: assets/img/robo404-cover.png

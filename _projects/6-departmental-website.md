@@ -2,7 +2,7 @@
 layout: page
 title: Departmental Official Website Development
 description: Full-stack department website built with Next.js/React, featuring CRUD content management and vector-based search
-importance: 6
+importance: 7
 category: work
 ---
 

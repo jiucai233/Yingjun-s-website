@@ -2,7 +2,7 @@
 layout: page
 title: "Transparent-Audit: Smart Receipt Audit System"
 description: Automated receipt audit pipeline using PaddleOCR, RAG with ChromaDB, and LLM-based compliance reasoning
-importance: 3
+importance: 4
 category: work
 github: https://github.com/jiucai233/28th-project-receiptaudit-dev
 img: assets/img/transparent-audit-cover.png
