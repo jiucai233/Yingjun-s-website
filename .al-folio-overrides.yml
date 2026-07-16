@@ -7,18 +7,18 @@ overrides:
     upstream_path: _layouts/about.liquid
     upstream_sha256: 2c28eb83b71fe65f252202c11f0b4a19a9b6f1faccdc870b4f91c4ea51d0c6f1
     local_sha256: 7cbcdade7f4c9cbc7232381a631f71b5271dc1a6c45c3bcfb964e9fc425d7830
-    acknowledged_at: '2026-06-08'
+    acknowledged_at: "2026-06-08"
   _sass/_variables.scss:
     owner: al_folio_core
     gem_version: 1.0.11
     upstream_path: _sass/_variables.scss
     upstream_sha256: 8a6b3e6a2dfcda6c7973dc7b19872f02d66d6c78bac677fc2dff0e272b3ebc84
-    local_sha256: 92d9f0a24610a1ba0d1f85b98b6efa5b9daa6ce0d3dfb6465bc69467478854b2
-    acknowledged_at: '2026-06-08'
+    local_sha256: 8778d1df3329c56da51fc0ecda623f569d58b1e46f59f23e6934a83bc90c3eb3
+    acknowledged_at: "2026-07-16"
   _includes/header.liquid:
     owner: al_folio_core
     gem_version: 1.0.11
     upstream_path: _includes/header.liquid
     upstream_sha256: c8663513baded68d9fa5fbe4d6363a976535bbe201efe5138243d0ff03101058
     local_sha256: 36d23780dc9ab4dc24c4c4ab6ba265c89324f0c90799ef7fa0c17f0982c958a8
-    acknowledged_at: '2026-06-08'
+    acknowledged_at: "2026-06-08"

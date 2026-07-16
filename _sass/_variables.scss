@@ -51,7 +51,6 @@ $back-to-top-width: $back-to-top-diameter;
 // Max width default
 $max-content-width: 930px !default;
 
-
 /*******************************************************************************
  * Portfolio / About Page Layout Styles
  * Single-page anchor layout inspired by chaemin-hwang.github.io
@@ -81,7 +80,7 @@ $max-content-width: 930px !default;
     object-fit: cover;
     aspect-ratio: 3 / 4;
     border: 1px solid var(--global-divider-color, #e0d8f0);
-    box-shadow: 0 4px 20px rgba(51, 0, 102, 0.10);
+    box-shadow: 0 4px 20px rgba(51, 0, 102, 0.1);
   }
 
   @media (max-width: 640px) {
@@ -113,7 +112,9 @@ $max-content-width: 930px !default;
   color: var(--global-text-color, #333);
   margin-bottom: 20px;
 
-  p { margin-bottom: 10px; }
+  p {
+    margin-bottom: 10px;
+  }
 }
 
 // ---- Interest Chips ----
@@ -132,7 +133,9 @@ $max-content-width: 930px !default;
   border: 1px solid var(--global-theme-color, #330066);
   color: var(--global-theme-color, #330066);
   background: transparent;
-  transition: background 0.15s, color 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s;
 
   &:hover {
     background: var(--global-theme-color, #330066);
@@ -159,7 +162,10 @@ $max-content-width: 930px !default;
   border-radius: 8px;
   border: 1px solid var(--global-theme-color, #330066);
   background: transparent;
-  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+  transition:
+    background 0.15s,
+    color 0.15s,
+    box-shadow 0.15s;
 
   &:hover {
     background: var(--global-theme-color, #330066);
@@ -167,7 +173,9 @@ $max-content-width: 930px !default;
     box-shadow: 0 2px 12px rgba(51, 0, 102, 0.18);
   }
 
-  i { font-size: 0.85rem; }
+  i {
+    font-size: 0.85rem;
+  }
 }
 
 // ---- Sections ----
@@ -242,7 +250,9 @@ $max-content-width: 930px !default;
   border-bottom: 1px solid var(--global-divider-color, #ebe5f5);
   transition: background 0.12s;
 
-  &:last-child { border-bottom: none; }
+  &:last-child {
+    border-bottom: none;
+  }
 
   &:hover {
     background: rgba(51, 0, 102, 0.03);
@@ -253,7 +263,8 @@ $max-content-width: 930px !default;
   }
 
   @media (max-width: 580px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 2fr;
+    gap: 12px;
   }
 }
 
@@ -290,7 +301,9 @@ $max-content-width: 930px !default;
   text-decoration: none;
   transition: color 0.15s;
 
-  &:hover { color: var(--global-theme-color, #330066); }
+  &:hover {
+    color: var(--global-theme-color, #330066);
+  }
 }
 
 .portfolio-project-github {
@@ -301,7 +314,9 @@ $max-content-width: 930px !default;
   font-size: 0.9rem;
   transition: color 0.15s;
 
-  &:hover { color: var(--global-theme-color, #330066); }
+  &:hover {
+    color: var(--global-theme-color, #330066);
+  }
 }
 
 .portfolio-project-desc {
@@ -345,7 +360,9 @@ $max-content-width: 930px !default;
   border-bottom: 1px solid var(--global-divider-color, #ebe5f5);
   align-items: start;
 
-  &:last-child { border-bottom: none; }
+  &:last-child {
+    border-bottom: none;
+  }
 }
 
 .portfolio-list-year {
@@ -387,7 +404,9 @@ $max-content-width: 930px !default;
   border-bottom: 1px solid transparent;
   transition: border-color 0.15s;
 
-  &:hover { border-bottom-color: var(--global-theme-color, #330066); }
+  &:hover {
+    border-bottom-color: var(--global-theme-color, #330066);
+  }
 }
 
 .portfolio-social {
@@ -400,7 +419,9 @@ $max-content-width: 930px !default;
   font-size: 0.8rem;
   color: var(--global-text-color-light, #888);
 
-  a { color: var(--global-theme-color, #330066); }
+  a {
+    color: var(--global-theme-color, #330066);
+  }
 }
 
 // ---- Photography gallery ----
