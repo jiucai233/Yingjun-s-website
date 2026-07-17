@@ -1,4 +1,4 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> 2024 | Yingjun Shen </title> <meta name="author" content="Yingjun Shen"> <meta name="description" content="AI Engineer focusing on computer vision, generative models, and multi-language AI systems."> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> <meta http-equiv="X-UA-Compatible" content="IE=edge"> <title> 2024 | Yingjun Shen </title> <meta name="author" content="Yingjun Shen"> <meta name="description" content="Undergraduate researcher in skill-based reinforcement learning and robot learning at Yonsei University."> <meta name="keywords" content="jekyll, jekyll-theme, academic-website, portfolio-website"> <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https:; frame-src 'self' https:; connect-src 'self' https:;"> <style>
   :root {
     --max-content-width: 930px;
   }
@@ -90,7 +90,12 @@ ninja.data = [{
           section: "News",},{id: "news-elected-as-president-of-the-yonsei-glc-foreign-student-council-and-yscssa-for-2025-sparkles",
           title: 'Elected as President of the Yonsei GLC Foreign Student Council and YSCSSA for...',
           description: "",
-          section: "News",},{id: "projects-food-detection-by-yolo",
+          section: "News",},{id: "projects-order-fixation-in-skill-based-rl-why-learned-skills-refuse-to-recombine",
+          title: 'Order Fixation in Skill-Based RL: Why Learned Skills Refuse to Recombine',
+          description: "First-author working paper. A causal-ablation study on SkiMo across Franka Kitchen and CALVIN, localizing the failure of zero-shot skill recombination to a self-sealing training loop rather than the weights: the frozen skill prior starves the replay buffer of counter-order successes and stale reward annotations dominate the value target, yet the same checkpoint learns the forbidden order from a fresh or relabeled buffer. Validated across four agents. In preparation for conference submission.",
+          section: "Projects",handler: () => {
+              window.location.href = "/Yingjun-s-website/projects/0-order-fixation/";
+            },},{id: "projects-food-detection-by-yolo",
           title: 'Food Detection by YOLO',
           description: "Food detection system for delivery services using YOLOv8 nano — custom dataset built from enterprise CCTV footage, with a full data pipeline I designed end-to-end",
           section: "Projects",handler: () => {
@@ -142,7 +147,7 @@ ninja.data = [{
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%69%6D%73%68%65%6E%31%39@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+          window.open("mailto:%6A%69%75%63%61%69@%79%6F%6E%73%65%69.%61%63.%6B%72", "_blank");
         },
       },{
         id: 'social-github',
