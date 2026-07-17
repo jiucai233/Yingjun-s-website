@@ -14,7 +14,7 @@ profile:
   more_info: >
     <p>Yonsei University</p>
     <p>Seoul, South Korea</p>
-    <p>imshen19@gmail.com</p>
+    <p>jiucai@yonsei.ac.kr</p>
 
 selected_papers: false
 social: true # includes social icons at the bottom of the page
@@ -32,6 +32,6 @@ latest_posts:
 
 Hello, I am **Yingjun Shen** (Simon / 申英君 / 신영군).
 
-I am a senior at **Yonsei University**, majoring in **Applied Information Engineering**, expecting to graduate in **Spring 2027**. My work sits at the intersection of computer vision and robotics, and I've recently been focusing on **reinforcement learning** and **Vision-Language-Action (VLA) models**   
+I am a senior at **Yonsei University**, majoring in **Applied Information Engineering**, expecting to graduate in **Spring 2027**. My research centers on skill-based and hierarchical reinforcement learning, the compositional generalization of learned skills, and vision-language-action models for long-horizon robotic manipulation. I am currently finalizing a first-author working paper diagnosing why pretrained skill priors fail to recombine zero-shot.
 
 I thrive in multilingual environments and work fluently across Chinese, Korean, and English. Outside of work, I enjoy playing football and photography.

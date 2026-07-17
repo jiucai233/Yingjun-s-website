@@ -1,11 +1,11 @@
 cv:
   name: Yingjun Shen
-  label: AI Engineer
+  label: Undergraduate Researcher
   email: jiucai@yonsei.ac.kr
   phone: "+82 10-2713-1677"
   location: Seoul, South Korea
   image: prof_pic.jpg
-  summary: AI Engineer focusing on computer vision, generative models, and multi-language AI systems. Experienced in deploying real AI services including YOLO detection, voice assistants, and RAG chatbots. Able to work across Korean, English, and Chinese environments with strong engineering execution.
+  summary: Undergraduate researcher in skill-based reinforcement learning and robot learning at Yonsei University. Experienced in deploying real AI services including YOLO detection, voice assistants, and RAG chatbots. Able to work across Korean, English, and Chinese environments with strong engineering execution.
 
   social_networks:
     - network: GitHub
